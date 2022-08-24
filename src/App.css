@@ -30,7 +30,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  padding-right: 5rem;
+  padding-right: 10rem;
 }
 
 .navbar__ul li {
@@ -44,7 +44,20 @@
   text-shadow: 0px 0px 10px whitesmoke;
 }
 
-.navbar__cart {
+.NavbarW__div {
+  display: flex;
   margin-right: 3rem;
   font-size: 1.5rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.navbarW__cart {
+  padding-right: 0.5rem;
+}
+
+.Huh {
+  display: flex;
+  align-items: center;
+  justify-content:center;
 }
