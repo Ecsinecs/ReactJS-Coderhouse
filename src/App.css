@@ -1,5 +1,4 @@
 *{
-  color: rgb(240, 240, 240);
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -8,6 +7,7 @@
 }
 
 .navbar {
+  color: rgb(240, 240, 240);
   background-color: #171a1f;
   display: flex;
   align-items: center;
@@ -60,4 +60,5 @@
   display: flex;
   align-items: center;
   justify-content:center;
+  color: #171a1f;
 }
