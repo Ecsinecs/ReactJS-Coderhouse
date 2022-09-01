@@ -5,7 +5,7 @@ import App from './App';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <React.StrictMode>
+  // <React.StrictMode> Si se descomenta, ItemListContaner.js corre 2 veces.
     <App />
-  </React.StrictMode>
+  // </React.StrictMode>
 );
