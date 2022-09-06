@@ -1,5 +1,3 @@
-//Counter | + = +1 / - = -1 | if < stock = +1 / if > stock = do nothing | if > initial = -1 / if < initial = do nothing.
-
 import React, { useEffect, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCartShopping } from "@fortawesome/free-solid-svg-icons";

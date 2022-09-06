@@ -1,18 +1,13 @@
 import React, { useEffect, useState } from "react";
 import promesa from "../utils/promesa";
-import Counter from "./Counter";
-import {data} from "../utils/data";
+import {productos} from "../utils/productos";
 
 const ItemListContainer = () => {
 
     const [products, setProducts] = useState([]);
 
-    const whenAdd = (qty) => {
-        alert(`Usted compró ${qty} A's`)
-    }
-
     useEffect(() => {
-        promesa(data)
+        promesa(productos)
          .then(result => setProducts(result))
          .catch(err => console.log(err))
     }, [])
@@ -22,15 +17,16 @@ const ItemListContainer = () => {
         <div className="containercards">
         {
             products.map(item => (
-                <div className="card">
+                //key={} sirve para solucionar el error.g
+                <div className="card" key={item.id}>
                     <img className="card__img" src={item.image} alt=""/>
                     <p className="card__name">{item.name}</p>
                     <hr className="card__hr"/>
                     <div className="card__div">
-                    <p>Stock: {item.stock}</p>
+                    <p>Precio: {item.price}$</p>
                     <p className="card__category">{item.categoryId}</p>
                     </div>
-                    <Counter max={item.stock} initial={0} whenAdd={whenAdd} />
+                    <button className="card__btn">Detalles</button>
                 </div>
             ))
         }

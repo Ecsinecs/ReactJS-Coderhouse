@@ -73,39 +73,58 @@
 }
 
 .counter__add {
-  border: 1px solid black;
-  border-radius: 0px 6px 6px 0px;
-  height: 23.2px;
   width: 1.2rem;
-  background-color: white;
+  background-color: #272c34;
+  border: 0;
+  color: rgb(240, 240, 240);
+  font-size: 1.5rem;
+  transition: 0.2s all ease-in-out;
+  border-radius: 5px;
+} 
+
+.counter__add:hover {
+  background-color: #414a56;
 } 
 
 .counter__sub {
-  border: 1px solid black;
-  border-radius: 6px 0px 0px 6px;
-  height: 23.2px;
   width: 1.2rem;
-  background-color: white;
+  background-color: #272c34;
+  border: 0;
+  color: rgb(240, 240, 240);
+  font-size: 1.5rem;
+  transition: 0.2s all ease-in-out;
+  border-radius: 5px;
 }
 
+.counter__sub:hover {
+  background-color: #353c46;
+} 
+
 .counter__number {
-  border-bottom: 1px solid black;
-  border-top: 1px solid black;
   width: 10rem;
   height: 23.3px;
   text-align: center;
+  font-size: 1.2rem;
 }
 
 .counter__buybutton{
   display: flex;
-  border: 1px black solid;
+  border: 0;
   width: 197.9px;
   border-radius: 5px;
   align-items: center;
   justify-content: center;
-  margin-top: 0.2rem;
+  margin-top: 0.5rem;
   padding: 0.2rem 0;
-  background-color: white;
+  background-color:#1a1d23;
+  color: rgb(240, 240, 240);
+  transition: all 0.2s ease-in-out;
+} 
+
+.counter__buybutton:hover{
+  background-color: #414a56;
+  font-size: 1.3rem;
+  margin-top: 0;
 }
 
 /* Cards */
@@ -144,11 +163,25 @@
   display: flex;
   justify-content: space-between;
   width: 200px;
-  margin-bottom: 0.4rem;
 }
 
 .card__category {
   color: rgb(146, 146, 146);
+}
+
+.card__btn {
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  border: 1px solid black;
+  border-radius: 4px;
+  font-size: 1.2rem;
+  background-color: white;
+  transition: all 0.2s ease-in-out;
+}
+
+.card__btn:hover {
+  font-size: 1.3rem;
+  background-color: rgb(232, 232, 232);
 }
 
 .containercards {
@@ -162,4 +195,58 @@
 
 .container {
   background-color:#272c34;
+}
+
+/* ItemDetail */
+
+.iDC {
+  background-color:#272c34;
+  padding-top: 3rem;
+  color: rgb(232, 232, 232);
+  min-height: 95.3vh;
+}
+
+.iDC__container {
+  max-width: 85%;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.iDC__img {
+  border-radius: 10px;
+  max-width: 650px;
+  max-height: 800px;
+  min-height: 650px;
+}
+
+.iDC__div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  min-width: 10rem;
+  min-height: 10rem;
+}
+
+.iDC__name {
+  font-size: 4.5rem;
+}
+
+.iDC__hr {
+  width: 100%;
+  margin: 1rem 0;
+}
+
+.iDC__desc {
+  font-size: 1.7rem;
+  text-align: center;
+}
+
+.iDC__PyS {
+  display: flex;
+  width: 50%;
+  margin: 0.8rem 0 0.2rem 0;
+  align-items: center;
+  justify-content: space-between;
 }

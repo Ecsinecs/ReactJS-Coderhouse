@@ -1,4 +1,4 @@
-export const data = [
+export const productos = [
     {
         id: 1,
         name: "Pack de Verduras 1",
