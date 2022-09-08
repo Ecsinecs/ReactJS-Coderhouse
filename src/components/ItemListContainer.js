@@ -1,16 +1,24 @@
 import React, { useEffect, useState } from "react";
 import promesa from "../utils/promesa";
 import {productos} from "../utils/productos";
+import { Link, useParams } from "react-router-dom";
 
 const ItemListContainer = () => {
 
     const [products, setProducts] = useState([]);
+    const {category} = useParams();
 
     useEffect(() => {
-        promesa(productos)
+        if (category) {
+        promesa(productos.filter(item => item.categoryId === category))
          .then(result => setProducts(result))
          .catch(err => console.log(err))
-    }, [])
+        } else {
+            promesa(productos)
+         .then(result => setProducts(result))
+         .catch(err => console.log(err))
+        }
+    }, [category]);
 
     return(
         <div className="container">
@@ -26,7 +34,7 @@ const ItemListContainer = () => {
                     <p>Precio: {item.price}$</p>
                     <p className="card__category">{item.categoryId}</p>
                     </div>
-                    <button className="card__btn">Detalles</button>
+                    <Link to={`/item/${item.id}`}><button className="card__btn">Detalles</button></Link>
                 </div>
             ))
         }

@@ -2,6 +2,7 @@ import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLeaf } from "@fortawesome/free-solid-svg-icons";
 import CartWidget from "./CartWidget";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
     return (
@@ -12,12 +13,12 @@ const Navbar = () => {
               icon={faLeaf}
               className="navbar__leaf"
             ></FontAwesomeIcon>
-            <h1 className="navbar__title">Natura Shop</h1>
+             <Link to="/"><h1 className="navbar__title">Natura Shop</h1></Link>
           </div>
           <ul className="navbar__ul">
-            <li>Verduras</li>
-            <li>Frutas</li>
-            <li>Packs</li>
+            <Link to="/category/Verdura"><li>Verduras</li></Link>
+            <Link to="/category/Fruta"><li>Frutas</li></Link>
+            <Link to="/category/Pack"><li>Packs</li></Link>
           </ul>
           <CartWidget/>
         </nav>
