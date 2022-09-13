@@ -1,8 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
+import CheckoutBtn from "./CheckoutBtn";
 import Counter from "./Counter";
 
 const ItemDetail = ({ item }) => {
+  const [bought, setBought] = useState(false)
   const whenAdd = (qty) => {
+    setBought(true)
     alert(`¡Has comprado ${qty} ${item.name}(s)!`);
   };
 
@@ -20,7 +23,9 @@ const ItemDetail = ({ item }) => {
                 <p className="iDC__price">Precio: ${item.price}</p>
                 <p className="iDC__stock">{item.stock} :Stock</p>
               </div>
-              <Counter max={item.stock} initial={0} whenAdd={whenAdd} />
+              {bought ? <CheckoutBtn/>
+                      : <Counter max={item.stock} initial={0} whenAdd={whenAdd} />
+              }
             </div>
           </div>
         ) : (
