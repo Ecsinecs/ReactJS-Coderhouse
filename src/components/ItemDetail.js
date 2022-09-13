@@ -1,31 +1,34 @@
-import React from "react"
-import Counter from "./Counter"
+import React from "react";
+import Counter from "./Counter";
 
-const ItemDetail = ({item}) => {
+const ItemDetail = ({ item }) => {
+  const whenAdd = (qty) => {
+    alert(`¡Has comprado ${qty} ${item.name}(s)!`);
+  };
 
-    const whenAdd = (qty) => {
-        alert(`¡Has comprado ${qty} ${item.name}(s)!`)
-    }
+  return (
+    <>
+      <div className="iDC">
+        {item && item.image ? (
+          <div className="iDC__container">
+            <img className="iDC__img" src={item.image} alt="" />
+            <div className="iDC__div">
+              <h1 className="iDC__name">{item.name}</h1>
+              <hr className="iDC__hr" />
+              <h2 className="iDC__desc">{item.desc}</h2>
+              <div className="iDC__PyS">
+                <p className="iDC__price">Precio: ${item.price}</p>
+                <p className="iDC__stock">{item.stock} :Stock</p>
+              </div>
+              <Counter max={item.stock} initial={0} whenAdd={whenAdd} />
+            </div>
+          </div>
+        ) : (
+          <h1 className="loading">Cargando...</h1>
+        )}
+      </div>
+    </>
+  );
+};
 
-    return (
-    <div className="iDC">
-     {
-         <div className="iDC__container">
-        <img className="iDC__img" src={item.image} alt="" />
-        <div className="iDC__div">
-        <h1 className="iDC__name">{item.name}</h1>
-        <hr className="iDC__hr"/>
-        <h2 className="iDC__desc">{item.desc}</h2>
-        <div className="iDC__PyS">
-        <p className="iDC__price">Precio: ${item.price}</p>
-        <p className="iDC__stock">{item.stock} :Stock</p>
-        </div>
-        <Counter max={item.stock} initial={0} whenAdd={whenAdd} />
-        </div>
-        </div>
-     }
-    </div>
-    )
-}
-
-export default ItemDetail
+export default ItemDetail;

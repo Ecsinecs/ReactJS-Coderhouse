@@ -32,13 +32,23 @@ const Counter = ({ max = 0, initial = 0, whenAdd }) => {
           +
         </button>
       </div>
+      {counter ? (
         <button className="counter__buybutton" onClick={() => whenAdd(counter)}>
           ¡Añadir!
-        <FontAwesomeIcon
-          icon={faCartShopping}
-          className="counter__cart"
-        ></FontAwesomeIcon>
+          <FontAwesomeIcon
+            icon={faCartShopping}
+            className="counter__cart"
+          ></FontAwesomeIcon>
         </button>
+      ) : (
+        <button disabled className="counter__buybutton" onClick={() => whenAdd(counter)}>
+          ¡Añadir!
+          <FontAwesomeIcon
+            icon={faCartShopping}
+            className="counter__cart"
+          ></FontAwesomeIcon>
+        </button>
+      )}
     </>
   );
 };

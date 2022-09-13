@@ -14,6 +14,11 @@ a {
   color: inherit;
 }
 
+.loading {
+  text-align: center;
+  padding-top: 20rem;
+  font-size: 5rem;
+}
 /* Navbar */
 
 .navbar {
@@ -124,11 +129,19 @@ a {
   transition: all 0.2s ease-in-out;
 } 
 
-.counter__buybutton:hover{
+.counter__buybutton:hover:enabled{
   background-color: #414a56;
   font-size: 1.3rem;
   margin-top: 0;
+  cursor: pointer;
 }
+
+.counter__buybutton:disabled {
+  background-color: #484f5c;
+  color: rgb(127, 127, 127);
+  cursor: default;
+  box-shadow: 2px 2px 5px #171717;
+} 
 
 /* Cards */
 
@@ -222,6 +235,7 @@ a {
   max-width: 650px;
   max-height: 800px;
   min-height: 650px;
+  background-color: white;
 }
 
 .iDC__div {
