@@ -5,7 +5,7 @@ import { faCartShopping } from "@fortawesome/free-solid-svg-icons";
 
 const CheckoutBtn = () => {
   return (
-    <Link to="/">
+    <Link to="/cart">
       <button className="counter__buybutton">
         Ir al carrito
         <FontAwesomeIcon

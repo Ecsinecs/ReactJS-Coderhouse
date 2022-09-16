@@ -1,12 +1,23 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
+import { CartContext } from "./CartContext";
 import CheckoutBtn from "./CheckoutBtn";
 import Counter from "./Counter";
 
 const ItemDetail = ({ item }) => {
-  const [bought, setBought] = useState(false)
+  const [bought, setBought] = useState(false);
+
+  const Cartctx = useContext(CartContext);
+
   const whenAdd = (qty) => {
-    setBought(true)
-    alert(`¡Has comprado ${qty} ${item.name}(s)!`);
+    if (!Cartctx.isInCart(item.name)) {
+      setBought(true);
+      alert(`¡Has comprado ${qty} ${item.name}(s)!`);
+      Cartctx.addItem(item, qty);
+    } else {
+      Cartctx.sumQty(item.id, qty);
+      alert(`¡Has añadido ${qty} unidades a ${item.name}!`);
+      setBought(true);
+    }
   };
 
   return (
@@ -23,9 +34,11 @@ const ItemDetail = ({ item }) => {
                 <p className="iDC__price">Precio: ${item.price}</p>
                 <p className="iDC__stock">{item.stock} :Stock</p>
               </div>
-              {bought ? <CheckoutBtn/>
-                      : <Counter max={item.stock} initial={0} whenAdd={whenAdd} />
-              }
+              {bought ? (
+                <CheckoutBtn />
+              ) : (
+                <Counter max={item.stock} initial={0} whenAdd={whenAdd} />
+              )}
             </div>
           </div>
         ) : (
