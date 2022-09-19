@@ -330,6 +330,13 @@ a {
   padding: 4rem 0 0 1rem;
 }
 
+.obj__totalPrice {
+  color: rgb(232, 232, 232);
+  grid-area: info;
+  font-size: 1.5rem;
+  padding: 6rem 0 0 1rem;
+}
+
 .obj__remove {
   grid-area: delete;
   background-color: rgb(179, 10, 10);
@@ -363,6 +370,18 @@ a {
   margin-left: 4.6rem;
 }
 
+.list__pucharse {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.list__total {
+  color: rgb(232, 232, 232);
+  margin-right: 2rem;
+  font-size: 1.7rem;
+}
+
 .list__buy {
   background-color: rgb(189, 255, 202);
   border: none;
@@ -374,4 +393,37 @@ a {
   align-self: center;
   justify-self: center;
   margin-right: 4.6rem;
+}
+
+/* Cuando no hay nada en el carro */
+
+.noCart {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 80vh;
+}
+
+.noCart__text {
+  font-size: 3rem;
+  margin-bottom: 5rem;
+  color: rgb(232, 232, 232);
+}
+
+.noCart__btn {
+  border: none;
+  border-radius: 5px;
+  background-color: #484f5c;
+  color: rgb(232, 232, 232);
+  width: 25rem;
+  height: 3.5rem;
+  font-size: 1.5rem;
+  transition: all 0.3s ease-in-out;
+}
+
+.noCart__btn:hover {
+  background-color: #656f7b;
+  box-shadow: 0px 0px 20px #58606b;
+  cursor: pointer;
 }

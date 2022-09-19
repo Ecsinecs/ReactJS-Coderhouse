@@ -39,7 +39,7 @@ export const productos = [
         id: 5,
         name: "Pack de frutas",
         desc: "Pack de frutas que contiene duraznos, bananas, manzanas, frutillas, peras y naranjas.",
-        price: 100,
+        price: 1100,
         stock: Math.floor(Math.random() * 265),
         image: "https://www.somnatur.com/wp-content/uploads/2017/01/3-3.png",
         categoryId: "Pack"

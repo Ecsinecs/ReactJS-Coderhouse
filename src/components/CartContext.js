@@ -28,20 +28,38 @@ const CartContextProvider = ({ children }) => {
     let find = cartList.find((item) => {
       return item.name === name;
     });
-    return find !== undefined
+    return find !== undefined;
   };
 
   const sumQty = (id, addedqty) => {
     let product = cartList.find((item) => {
-        return item.id === id;
-    })
-    product.qty = product.qty + addedqty
+      return item.id === id;
+    });
+    product.qty = product.qty + addedqty;
+  };
+
+  const calcTotalItems = () => {
+    let items = cartList.map(item => item.qty);
+    return items.reduce(((previousValue, currentValue) => previousValue + currentValue), 0);
+  }
+
+  const priceTotalAll = () => {
+    let totalAll = cartList.map(item => item.qty * item.price);
+    return totalAll.reduce(((previousValue, currentValue) => previousValue + currentValue), 0);
+  }
+
+  const singleTotal = (id) => {
+    console.log(id)
+    let prod = cartList.find(item => id === item.id)
+    console.log(prod)
+    let total = prod.price * prod.qty
+    return total
   }
 
   return (
     // Entre llaves porque value solo puede tener una cosa, con la llave se convierte en objeto y es una sola cosa con varias dentro.
     <CartContext.Provider
-      value={{ cartList, addItem, removeItem, clear, isInCart, sumQty }}
+      value={{ cartList, addItem, removeItem, clear, isInCart, sumQty, calcTotalItems, priceTotalAll, singleTotal}}
     >
       {children}
     </CartContext.Provider>
