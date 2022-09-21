@@ -15,8 +15,8 @@ const CartContextProvider = ({ children }) => {
     setCartList([...cartList, itemQty]); //Esto hace que sobrescriba el array con otro array que contenga lo que tenia el array anterior + item
   };
 
-  const removeItem = (id) => {
-    let newArray = cartList.filter((item) => item.id !== id);
+  const removeItem = (name) => {
+    let newArray = cartList.filter((item) => item.name !== name);
     setCartList(newArray);
   };
 
@@ -39,27 +39,41 @@ const CartContextProvider = ({ children }) => {
   };
 
   const calcTotalItems = () => {
-    let items = cartList.map(item => item.qty);
-    return items.reduce(((previousValue, currentValue) => previousValue + currentValue), 0);
-  }
+    let items = cartList.map((item) => item.qty);
+    return items.reduce(
+      (previousValue, currentValue) => previousValue + currentValue,
+      0
+    );
+  };
 
   const priceTotalAll = () => {
-    let totalAll = cartList.map(item => item.qty * item.price);
-    return totalAll.reduce(((previousValue, currentValue) => previousValue + currentValue), 0);
-  }
+    let totalAll = cartList.map((item) => item.qty * item.price);
+    return totalAll.reduce(
+      (previousValue, currentValue) => previousValue + currentValue,
+      0
+    );
+  };
 
   const singleTotal = (id) => {
-    console.log(id)
-    let prod = cartList.find(item => id === item.id)
-    console.log(prod)
-    let total = prod.price * prod.qty
-    return total
-  }
+    let prod = cartList.find((item) => id === item.id);
+    let total = prod.price * prod.qty;
+    return total;
+  };
 
   return (
     // Entre llaves porque value solo puede tener una cosa, con la llave se convierte en objeto y es una sola cosa con varias dentro.
     <CartContext.Provider
-      value={{ cartList, addItem, removeItem, clear, isInCart, sumQty, calcTotalItems, priceTotalAll, singleTotal}}
+      value={{
+        cartList,
+        addItem,
+        removeItem,
+        clear,
+        isInCart,
+        sumQty,
+        calcTotalItems,
+        priceTotalAll,
+        singleTotal,
+      }}
     >
       {children}
     </CartContext.Provider>

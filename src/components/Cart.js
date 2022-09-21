@@ -25,7 +25,7 @@ const Cart = () => {
               <p className="obj__totalPrice">Total: ${Cartctx.singleTotal(item.id)}</p>
               <button
                 className="obj__remove"
-                onClick={() => Cartctx.removeItem(item.id)}
+                onClick={() => Cartctx.removeItem(item.name)}
               >
                 Eliminar
               </button>
