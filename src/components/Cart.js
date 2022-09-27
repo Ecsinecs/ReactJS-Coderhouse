@@ -1,14 +1,64 @@
+import {
+  collection,
+  serverTimestamp,
+  doc,
+  setDoc,
+  updateDoc,
+  increment,
+} from "firebase/firestore";
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import { CartContext } from "./CartContext";
+import { db } from "../utils/firebaseConfig";
 
 const Cart = () => {
   const Cartctx = useContext(CartContext);
   console.log(Cartctx);
 
   const buy = () => {
-    alert("Se realizó tu compra.");
-    Cartctx.clear();
+    let itemsBought = Cartctx.cartList.map((item) => ({
+      id: item.id, //Retorna undefined - Firebase da error porque no puede almacenar el valor "undefined"
+      title: item.name,
+      price: Cartctx.singleTotal(item.id),
+      qty: item.qty,
+    }));
+    let bought = {
+      buyer: {
+        name: "Yi Long Musk",
+        email: "yilongmusk@notmusk.com",
+        phone: "41 4920-1924",
+      },
+      date: serverTimestamp(), //Saca la fecha y tiempo del servidor.
+      items: itemsBought,
+    };
+
+    const createOrder = async () => {
+      const newOrder = doc(collection(db, "orders")); //Crea la colección
+      await setDoc(newOrder, bought); //Crea nuevo documento
+      return newOrder;
+    };
+
+    createOrder()
+      .then((result) =>
+        alert(
+          `Tu orden ha sido tomada...
+        Con el valor de $${Cartctx.priceTotalAll()}.
+        Con el ID "${result.id}".`
+        ),
+        Cartctx.cartList
+        .forEach(async (item) => {
+          const itemRef = doc(db, "products", item.id); // Error - Se rompe la app porque no encuentra el documento con id "undefined"
+          await updateDoc(itemRef, {
+            stock: increment(-item.qty),
+          });
+          Cartctx.clear();
+        })
+      )
+      .catch((err) =>
+        alert(` 
+      No se pudo realizar tu compra... 
+      Error: ${err}`)
+      );
   };
 
   return (
@@ -22,7 +72,9 @@ const Cart = () => {
                 {item.qty} {item.name}
               </p>
               <p className="obj__price">Precio: ${item.price} c/u</p>
-              <p className="obj__totalPrice">Total: ${Cartctx.singleTotal(item.id)}</p>
+              <p className="obj__totalPrice">
+                Total: ${Cartctx.singleTotal(item.id)}
+              </p>
               <button
                 className="obj__remove"
                 onClick={() => Cartctx.removeItem(item.name)}
@@ -46,9 +98,15 @@ const Cart = () => {
             </div>
           ) : (
             <div className="noCart">
-            <p className="noCart__text">Actualmente no hay nada en el carrito...</p>
-            <Link to="/"><button className="noCart__btn">Volver a la pagina principal</button></Link>
-            </div>  
+              <p className="noCart__text">
+                Actualmente no hay nada en el carrito...
+              </p>
+              <Link to="/">
+                <button className="noCart__btn">
+                  Volver a la pagina principal
+                </button>
+              </Link>
+            </div>
           )}
         </div>
       </div>

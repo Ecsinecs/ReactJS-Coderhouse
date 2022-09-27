@@ -9,14 +9,11 @@ const ItemDetailContainer = () => {
 
     const [dato, setDato] = useState([])
     const {id} = useParams(); 
+    
     useEffect(() => {
-
         singleFetch(id)
          .then((result) => setDato(result))
-
-        //     promesa(productos.find(item => item.id === parseInt(id)))
-        //  .then(result => setDato(result))
-        //  .catch(err => console.log(err))
+         .catch(err => console.log(err))
     }, [id]);
 
     return (

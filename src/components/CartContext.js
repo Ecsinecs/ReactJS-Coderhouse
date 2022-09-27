@@ -9,7 +9,7 @@ const CartContextProvider = ({ children }) => {
   const addItem = (item, qty) => {
     let itemQty = {
       ...item,
-      qty,
+      qty 
     }; //Crea un nuevo item que le añade el qty.
 
     setCartList([...cartList, itemQty]); //Esto hace que sobrescriba el array con otro array que contenga lo que tenia el array anterior + item

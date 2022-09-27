@@ -8,19 +8,21 @@ const ItemListContainer = () => {
   const { category } = useParams();
 
   useEffect(() => {
-    setProducts([])
+    setProducts([]);
     firestoreFetch(category).then((result) => setProducts(result));
   }, [category]);
 
   return (
     <div className="container">
-      {products.length > 0 ?
-      <div className="containercards">
-        {products.map((item) => (
-          <ItemList item={item} />
-        ))}
-      </div>
-      : <h1 className="loading">Cargando...</h1>}
+      {products.length > 0 ? (
+        <div className="containercards">
+          {products.map((item) => (
+            <ItemList item={item} />
+          ))}
+        </div>
+      ) : (
+        <h1 className="loading">Cargando...</h1>
+      )}
     </div>
   );
 };
