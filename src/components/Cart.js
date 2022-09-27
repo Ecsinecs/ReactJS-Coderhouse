@@ -1,11 +1,4 @@
-import {
-  collection,
-  serverTimestamp,
-  doc,
-  setDoc,
-  updateDoc,
-  increment,
-} from "firebase/firestore";
+import { collection, serverTimestamp, doc, setDoc } from "firebase/firestore";
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import { CartContext } from "./CartContext";
@@ -17,7 +10,7 @@ const Cart = () => {
 
   const buy = () => {
     let itemsBought = Cartctx.cartList.map((item) => ({
-      id: item.id, //Retorna undefined - Firebase da error porque no puede almacenar el valor "undefined"
+      id: item.itemId, //Retorna undefined - Firebase da error porque no puede almacenar el valor "undefined"
       title: item.name,
       price: Cartctx.singleTotal(item.id),
       qty: item.qty,
@@ -39,20 +32,20 @@ const Cart = () => {
     };
 
     createOrder()
-      .then((result) =>
-        alert(
-          `Tu orden ha sido tomada...
+      .then(
+        (result) =>
+          alert(
+            `Tu orden ha sido tomada...
         Con el valor de $${Cartctx.priceTotalAll()}.
         Con el ID "${result.id}".`
-        ),
-        Cartctx.cartList
-        .forEach(async (item) => {
-          const itemRef = doc(db, "products", item.id); // Error - Se rompe la app porque no encuentra el documento con id "undefined"
-          await updateDoc(itemRef, {
-            stock: increment(-item.qty),
-          });
-          Cartctx.clear();
-        })
+          ),
+        // Cartctx.cartList
+        // .forEach(async (item) => {
+        //   const itemRef = doc(db, "products", item.itemId); // Error - Se rompe la app porque no encuentra el documento con id "undefined"
+        //   await updateDoc(itemRef, {                        // No lo pude hacer andar
+        //     stock: increment(-item.qty),
+        //   });
+        Cartctx.clear()
       )
       .catch((err) =>
         alert(` 
