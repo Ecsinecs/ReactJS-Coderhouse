@@ -47,7 +47,9 @@ export const singleFetch = async (id) => {
   const docSnap = await getDoc(docRef);
 
   if (docSnap.exists()) {
-    return docSnap.data()
+    let singleData = docSnap.data()
+    singleData.id = docSnap.id
+    return singleData
   } else {
     // doc.data() will be undefined in this case
     console.log("No such document!");

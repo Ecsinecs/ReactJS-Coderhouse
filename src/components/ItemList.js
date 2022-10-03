@@ -5,7 +5,7 @@ const ItemList = ({ item }) => {
   return (
     <>
       {/* key={} sirve para solucionar el error */}
-      <div className="card" key={item.id}>
+      <div className="card">
         <img className="card__img" src={item.image} alt="" />
         <p className="card__name">{item.name}</p>
         <hr className="card__hr" />

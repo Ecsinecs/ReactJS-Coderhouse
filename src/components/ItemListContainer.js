@@ -17,7 +17,7 @@ const ItemListContainer = () => {
       {products.length > 0 ? (
         <div className="containercards">
           {products.map((item) => (
-            <ItemList item={item} />
+            <ItemList key={item.id} item={item} />
           ))}
         </div>
       ) : (
