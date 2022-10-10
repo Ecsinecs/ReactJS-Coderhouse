@@ -4,7 +4,6 @@ import { Link } from "react-router-dom";
 const ItemList = ({ item }) => {
   return (
     <>
-      {/* key={} sirve para solucionar el error */}
       <div className="card">
         <img className="card__img" src={item.image} alt="" />
         <p className="card__name">{item.name}</p>

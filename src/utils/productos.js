@@ -1,3 +1,4 @@
+//Lista exportada a firebase.
 export const productos = [
     {
         id: 1,

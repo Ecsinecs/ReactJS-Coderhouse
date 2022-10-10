@@ -428,3 +428,6 @@ a {
   box-shadow: 0px 0px 20px #58606b;
   cursor: pointer;
 }
+
+/* Todo esto se podria partir en varios archivos css o sass.
+   No es buena practica tener varios componentes en un mismo archivo. */

@@ -29,17 +29,17 @@ export const db = getFirestore(app);
 export const firestoreFetch = async (category) => {
   let q;
   if (category) {
-    q = query(collection(db, "productos"), where("categoryId", "==", category)); //Traer docs where(donde) categoryId es == a category
+    q = query(collection(db, "productos"), where("categoryId", "==", category)); //Traer docs where categoryId es == a category
   } else {
     q = query(collection(db, "productos")); //Traer todos los docs
   }
-  const querySnapshot = await getDocs(q); //Consulta los datos que se les asigno a la variable q anteriormente
+  const querySnapshot = await getDocs(q); //Consulta los datos que se les asigno a la variable "q" anteriormente
   const dataFromFS = querySnapshot.docs.map((doc) => ({
     //Conversion a array de objetos y le introducimos el id ya que por default esta por fuera del objeto.
     id: doc.id,
     ...doc.data(),
   }));
-  return dataFromFS; //Retorna los datos.
+  return dataFromFS;
 };
 
 export const singleFetch = async (id) => {

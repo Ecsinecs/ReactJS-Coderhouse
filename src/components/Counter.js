@@ -11,7 +11,7 @@ const Counter = ({ max = 0, initial = 0, whenAdd }) => {
 
   const add = () => {
     if (counter < max) {
-      setCounter((prev) => prev + 1); // si se hace counter++ o counter+1 se toma como una constante y tira error (?)
+      setCounter((prev) => prev + 1);
     }
   };
 
