@@ -36,6 +36,7 @@ const CartContextProvider = ({ children }) => {
       return item.id === id;
     });
     product.qty = product.qty + addedqty;
+    setCartList([...cartList])
   };
 
   const calcTotalItems = () => {

@@ -10,7 +10,7 @@ const Cart = () => {
 
   const buy = () => {
     let itemsBought = Cartctx.cartList.map((item) => ({
-      id: item.id, //Retorna undefined - Firebase da error porque no puede almacenar el valor "undefined"
+      id: item.id,
       title: item.name,
       price: Cartctx.singleTotal(item.id),
       qty: item.qty,
@@ -42,9 +42,8 @@ const Cart = () => {
     Con el ID "${result.id}".`
           ),
         Cartctx.cartList.forEach(async (item) => {
-          const itemRef = doc(db, "productos", item.id); // Error - Se rompe la app porque no encuentra el documento con id "undefined"
+          const itemRef = doc(db, "productos", item.id);
           await updateDoc(itemRef, {
-            // No lo pude hacer andar
             stock: increment(-item.qty),
           });
           Cartctx.clear();
