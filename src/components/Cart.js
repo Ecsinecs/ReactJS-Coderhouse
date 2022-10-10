@@ -96,7 +96,7 @@ const Cart = () => {
               <p className="noCart__text">
                 Actualmente no hay nada en el carrito...
               </p>
-              <Link to="/">
+              <Link to="/ReactJS-Coderhouse">
                 <button className="noCart__btn">
                   Volver a la pagina principal
                 </button>

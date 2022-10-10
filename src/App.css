@@ -349,6 +349,7 @@ a {
   border-radius: 3px;
   align-self: center;
   justify-self: center;
+  cursor: pointer;
 }
 
 .list__buttons {
@@ -369,6 +370,7 @@ a {
   align-self: center;
   justify-self: center;
   margin-left: 4.6rem;
+  cursor: pointer;
 }
 
 .list__pucharse {
@@ -394,6 +396,7 @@ a {
   align-self: center;
   justify-self: center;
   margin-right: 4.6rem;
+  cursor: pointer;
 }
 
 /* Cuando no hay nada en el carro */

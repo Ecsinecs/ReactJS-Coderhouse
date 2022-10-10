@@ -13,7 +13,7 @@ const Navbar = () => {
               icon={faLeaf}
               className="navbar__leaf"
             ></FontAwesomeIcon>
-             <Link to="/"><h1 className="navbar__title">Natura Shop</h1></Link>
+             <Link to="/ReactJS-Coderhouse"><h1 className="navbar__title">Natura Shop</h1></Link>
           </div>
           <ul className="navbar__ul">
             <Link to="/category/Verdura"><li>Verduras</li></Link>
