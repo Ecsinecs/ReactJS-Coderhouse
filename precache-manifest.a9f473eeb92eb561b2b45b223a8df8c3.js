@@ -1,11 +1,11 @@
 self.__precacheManifest = [
   {
-    "revision": "db702a444c68eb5fbd70",
-    "url": "/ReactJS-Coderhouse/static/css/main.ef4a799b.chunk.css"
+    "revision": "6844efdd7292aa6b4aa0",
+    "url": "/ReactJS-Coderhouse/static/css/main.e9867775.chunk.css"
   },
   {
-    "revision": "db702a444c68eb5fbd70",
-    "url": "/ReactJS-Coderhouse/static/js/main.db702a44.chunk.js"
+    "revision": "6844efdd7292aa6b4aa0",
+    "url": "/ReactJS-Coderhouse/static/js/main.6844efdd.chunk.js"
   },
   {
     "revision": "246a0fec9f2840851a0f",
@@ -16,7 +16,7 @@ self.__precacheManifest = [
     "url": "/ReactJS-Coderhouse/static/js/runtime~main.97f6430f.js"
   },
   {
-    "revision": "7aec6314d3f0e617e313d6f6f412f85e",
+    "revision": "d67482091afcc69af40893b72518381f",
     "url": "/ReactJS-Coderhouse/index.html"
   }
 ];
