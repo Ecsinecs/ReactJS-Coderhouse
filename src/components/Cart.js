@@ -87,31 +87,31 @@ const Cart = () => {
               {/* Se envuelve en funcion anonima porque le pasas parametros. */}
             </div>
           ))}
-          {Cartctx.cartList.length > 0 ? (
-            <div className="list__buttons">
-              <div className="list__pucharse">
-                <p className="list__total">Total: ${Cartctx.priceTotalAll()}</p>
-                <button className="list__buy" onClick={buy}>
-                  Realizar compra
-                </button>
-              </div>
-              <button className="list__clear" onClick={Cartctx.clear}>
-                Eliminar todo
+        </div>
+        {Cartctx.cartList.length > 0 ? (
+          <div className="list__buttons">
+            <div className="list__pucharse">
+              <p className="list__total">Total: ${Cartctx.priceTotalAll()}</p>
+              <button className="list__buy" onClick={buy}>
+                Realizar compra
               </button>
             </div>
-          ) : (
-            <div className="noCart">
-              <p className="noCart__text">
-                Actualmente no hay nada en el carrito...
-              </p>
-              <Link to="/ReactJS-Coderhouse">
-                <button className="noCart__btn">
-                  Volver a la pagina principal
-                </button>
-              </Link>
-            </div>
-          )}
-        </div>
+            <button className="list__clear" onClick={Cartctx.clear}>
+              Eliminar todo
+            </button>
+          </div>
+        ) : (
+          <div className="noCart">
+            <p className="noCart__text">
+              Actualmente no hay nada en el carrito...
+            </p>
+            <Link to="/ReactJS-Coderhouse">
+              <button className="noCart__btn">
+                Volver a la pagina principal
+              </button>
+            </Link>
+          </div>
+        )}
       </div>
     </>
   );
