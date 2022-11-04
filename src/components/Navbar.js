@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLeaf } from "@fortawesome/free-solid-svg-icons";
 import CartWidget from "./CartWidget";
 import { Link } from "react-router-dom";
+import "../css/navbar.css"
 
 const Navbar = () => {
     return (

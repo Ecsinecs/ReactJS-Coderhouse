@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import ItemList from "./ItemList";
 import { firestoreFetch } from "../utils/firebaseConfig";
+import "../css/cards.css"
 
 const ItemListContainer = () => {
   const [products, setProducts] = useState([]);

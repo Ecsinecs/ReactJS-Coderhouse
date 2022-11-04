@@ -1,0 +1,51 @@
+.navbar {
+    color: rgb(240, 240, 240);
+    background-color: #171a1f;
+    display: flex;
+    align-items: center;
+    justify-content:space-between;
+    flex-direction: column;
+  }
+  
+  .navbar__logo {
+    display: flex;
+    align-items: center;
+   justify-content:center;
+   font-size: 1.5rem;
+   margin-top: 0.5rem;
+  }
+  
+  .navbar__leaf {
+    margin-right: 0.6rem;
+  }
+  
+  .navbar__ul {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0.5rem 0;
+  }
+  
+  .navbar__ul li {
+    margin-right: 1rem;
+    font-weight: 600;
+    transition:all 0.5s;
+  }
+  
+  .navbar__ul li:hover {
+    font-size: 1.1rem;
+    text-shadow: 0px 0px 10px whitesmoke;
+  }
+  
+  .NavbarW__div {
+    display: flex;
+    font-size: 1.5rem;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 0.5rem;
+  }
+  
+  .navbarW__cart {
+    padding-right: 0.5rem;
+  }
+  
