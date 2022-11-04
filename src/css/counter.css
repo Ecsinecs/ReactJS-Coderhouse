@@ -1,0 +1,76 @@
+.counter {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: fit-content;
+    margin-top: 1rem;
+  }
+  
+  .counter__add {
+    width: 1.2rem;
+    background-color: #272c34;
+    border: 0;
+    color: rgb(240, 240, 240);
+    font-size: 1.5rem;
+    transition: 0.2s all ease-in-out;
+    border-radius: 5px;
+  } 
+  
+  .counter__add:hover {
+    background-color: #414a56;
+  } 
+  
+  .counter__sub {
+    width: 1.2rem;
+    background-color: #272c34;
+    border: 0;
+    color: rgb(240, 240, 240);
+    font-size: 1.5rem;
+    transition: 0.2s all ease-in-out;
+    border-radius: 5px;
+  }
+  
+  .counter__sub:hover {
+    background-color: #353c46;
+  } 
+  
+  .counter__number {
+    width: 10rem;
+    height: 23.3px;
+    text-align: center;
+    font-size: 1.2rem;
+  }
+  
+  .counter__buybutton{
+    display: flex;
+    border: 0;
+    width: 197.9px;
+    border-radius: 5px;
+    align-items: center;
+    justify-content: center;
+    margin-top: 0.5rem;
+    margin-bottom: 2rem;
+    padding: 0.2rem 0;
+    background-color:#1a1d23;
+    color: rgb(240, 240, 240);
+    transition: all 0.2s ease-in-out;
+  } 
+  
+  .counter__buybutton:hover:enabled{
+    background-color: #414a56;
+    font-size: 1.3rem;
+    margin-top: 0;
+    cursor: pointer;
+  }
+  
+  .counter__buybutton:disabled {
+    background-color: #484f5c;
+    color: rgb(127, 127, 127);
+    cursor: default;
+    box-shadow: 2px 2px 5px #171717;
+  } 
+  
+  .counter__cart {
+    padding-left: 0.4rem;
+  }
+  

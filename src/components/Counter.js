@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCartShopping } from "@fortawesome/free-solid-svg-icons";
+import "../css/counter.css"
 
 const Counter = ({ max = 0, initial = 0, whenAdd }) => {
   const [counter, setCounter] = useState(0);

@@ -11,7 +11,7 @@ Puede:
 ## Clonar:
 
 Para clonar el proyecto es sencillo, copias el link que está en "Code > Clone > HTTPS".
-Vas a la consola y haces "git clone LinkCopiado".
+Vas a la consola y haces "git clone 'LinkCopiado'".
 Luego en el proyecto en la consola haces "git i" y se te instalarán las dependencias necesarias.
 
 Para modificar el firebase deberás crear tu propio backend en él.
@@ -30,11 +30,8 @@ Te recomiendo Visual Studio Code para manejar mejor el proyecto, para iniciar el
 
 ## ¿Se puede contribuir?
 
-No, considero por el momento, este proyecto cerrado.
-Pero actualmente el proyecto no es responsive, si buscas un ejercicio puedes clonarlo e intentar hacerlo responsive ;)
-(Si lo haces y lo publicas, por favor da creditos del proyecto original.)
-Tambien el proyecto podria contar con varias funcionalidades mas.
-El comprador podria dejar sus datos y que se guarden en la base de datos por ejemplo.
+No, este fue un proyecto para mis estudios y no tengo intenciones de llevarlo más allá.
+Pero si quieres puedes clonarlo para añadirle mas funcionalidades (Si lo haces y lo publicas deja creditos pls!)
 
 ## Hecho por:
 

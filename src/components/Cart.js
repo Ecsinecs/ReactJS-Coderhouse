@@ -1,8 +1,16 @@
-import { collection, serverTimestamp, doc, setDoc, updateDoc, increment } from "firebase/firestore";
+import {
+  collection,
+  serverTimestamp,
+  doc,
+  setDoc,
+  updateDoc,
+  increment,
+} from "firebase/firestore";
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import { CartContext } from "./CartContext";
 import { db } from "../utils/firebaseConfig";
+import "../css/cart.css";
 
 const Cart = () => {
   const Cartctx = useContext(CartContext);
@@ -81,15 +89,15 @@ const Cart = () => {
           ))}
           {Cartctx.cartList.length > 0 ? (
             <div className="list__buttons">
-              <button className="list__clear" onClick={Cartctx.clear}>
-                Clear
-              </button>
               <div className="list__pucharse">
                 <p className="list__total">Total: ${Cartctx.priceTotalAll()}</p>
                 <button className="list__buy" onClick={buy}>
                   Realizar compra
                 </button>
               </div>
+              <button className="list__clear" onClick={Cartctx.clear}>
+                Eliminar todo
+              </button>
             </div>
           ) : (
             <div className="noCart">

@@ -3,6 +3,7 @@ import ItemDetail from "./ItemDetail"
 import { useEffect, useState } from "react"
 import { useParams } from "react-router-dom"
 import { singleFetch } from "../utils/firebaseConfig"
+import "../css/itemDetail.css"
 
 
 const ItemDetailContainer = () => {
