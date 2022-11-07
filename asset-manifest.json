@@ -1,13 +1,15 @@
 {
-  "main.css": "/ReactJS-Coderhouse/static/css/main.e9867775.chunk.css",
-  "main.js": "/ReactJS-Coderhouse/static/js/main.6844efdd.chunk.js",
-  "main.js.map": "/ReactJS-Coderhouse/static/js/main.6844efdd.chunk.js.map",
-  "static/js/1.246a0fec.chunk.js": "/ReactJS-Coderhouse/static/js/1.246a0fec.chunk.js",
-  "static/js/1.246a0fec.chunk.js.map": "/ReactJS-Coderhouse/static/js/1.246a0fec.chunk.js.map",
+  "main.css": "/ReactJS-Coderhouse/static/css/main.36091754.chunk.css",
+  "main.js": "/ReactJS-Coderhouse/static/js/main.388a77cc.chunk.js",
+  "main.js.map": "/ReactJS-Coderhouse/static/js/main.388a77cc.chunk.js.map",
+  "static/css/1.887e4774.chunk.css": "/ReactJS-Coderhouse/static/css/1.887e4774.chunk.css",
+  "static/js/1.c9002264.chunk.js": "/ReactJS-Coderhouse/static/js/1.c9002264.chunk.js",
+  "static/js/1.c9002264.chunk.js.map": "/ReactJS-Coderhouse/static/js/1.c9002264.chunk.js.map",
   "runtime~main.js": "/ReactJS-Coderhouse/static/js/runtime~main.97f6430f.js",
   "runtime~main.js.map": "/ReactJS-Coderhouse/static/js/runtime~main.97f6430f.js.map",
-  "static/css/main.e9867775.chunk.css.map": "/ReactJS-Coderhouse/static/css/main.e9867775.chunk.css.map",
+  "static/css/main.36091754.chunk.css.map": "/ReactJS-Coderhouse/static/css/main.36091754.chunk.css.map",
+  "static/css/1.887e4774.chunk.css.map": "/ReactJS-Coderhouse/static/css/1.887e4774.chunk.css.map",
   "index.html": "/ReactJS-Coderhouse/index.html",
-  "precache-manifest.a9f473eeb92eb561b2b45b223a8df8c3.js": "/ReactJS-Coderhouse/precache-manifest.a9f473eeb92eb561b2b45b223a8df8c3.js",
+  "precache-manifest.c4aa5208ef64523be62360b38355ea84.js": "/ReactJS-Coderhouse/precache-manifest.c4aa5208ef64523be62360b38355ea84.js",
   "service-worker.js": "/ReactJS-Coderhouse/service-worker.js"
 }
