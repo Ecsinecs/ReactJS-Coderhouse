@@ -1,0 +1,128 @@
+.background {
+    background-color: #272c34;
+    min-height: 89vh;
+    padding: 1.5rem 0;
+}
+
+.checkoutContainer {
+    width: 90%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.checkout {
+    padding: 1.2rem 0.8rem;
+    background-color: #434a55;
+    color: rgb(220, 220, 220);
+}
+
+.checkoutInfoContainer {
+    padding: 0 0.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.checkoutTitle {
+    font-size: 1.6rem;
+    text-align: center;
+}
+
+hr {
+    margin: 0.2rem 0 0.8rem 0;
+}
+
+/* Comprador */
+
+.checkoutBuyer {
+    font-size: 0.95rem;
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+
+.buyerTitle {
+    font-size: 1.4rem;
+}
+
+/* Lo comprado */
+
+.boughtTitle {
+    font-size: 1.4rem;
+}
+
+.checkoutItemList {
+    background-color: #3c414a;
+    padding: 0.6rem 0.5rem;
+    gap: 5px;
+    display: flex;
+    flex-direction: column;
+    border: #363c46 solid 1px;
+}
+
+.checkoutItem {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Datos extra */
+
+.dataTitle {
+    font-size: 1.4rem;
+    margin-bottom: 3px;
+}
+
+.dataID {
+    font-size: 0.95rem;
+}
+
+.homepageBtn {
+    border: none;
+    border-radius: 5px;
+    background-color: #484f5c;
+    color: rgb(232, 232, 232);
+    font-size: 1.08rem;
+    transition: all 0.3s ease-in-out;
+    padding: 1rem;
+    margin-top: 2rem;
+  }
+
+  .homepageBtn:hover {
+    background-color: #656f7b;
+    box-shadow: 0px 0px 20px #58606b;
+    cursor: pointer;
+  }
+
+  @media (min-width: 425px) {
+    .homepageBtn {
+      font-size: 4vw;
+    }
+  }
+
+  @media (min-width: 585px) {
+    .checkout {
+        width: 60%;
+        max-width: 550px;
+    }
+  }
+
+  @media (min-width: 585px) {
+    .background {
+        min-height: 95vh;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .homepageBtn {
+      font-size: 3vw;
+    }
+  }
+
+  @media (min-width: 1660px) {
+    .homepageBtn {
+      font-size: 1.5vw;
+    }
+  }

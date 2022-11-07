@@ -12,7 +12,7 @@ const ItemList = ({ item }) => {
           <p>Precio: {item.price}$</p>
           <p className="card__category">{item.categoryId}</p>
         </div>
-        <Link to={`/item/${item.id}`}>
+        <Link to={`/ReactJS-Coderhouse/item/${item.id}`}>
           <button className="card__btn">Detalles</button>
         </Link>
       </div>

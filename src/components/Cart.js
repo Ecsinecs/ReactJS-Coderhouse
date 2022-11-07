@@ -10,11 +10,12 @@ import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import { CartContext } from "./CartContext";
 import { db } from "../utils/firebaseConfig";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import "../css/cart.css";
 
 const Cart = () => {
   const Cartctx = useContext(CartContext);
-  console.log(Cartctx);
 
   const buy = () => {
     let itemsBought = Cartctx.cartList.map((item) => ({
@@ -33,8 +34,6 @@ const Cart = () => {
       items: itemsBought,
     };
 
-    console.log(bought);
-
     const createOrder = async () => {
       const newOrder = doc(collection(db, "orders")); //Crea la colección
       await setDoc(newOrder, bought); //Crea nuevo documento
@@ -42,25 +41,18 @@ const Cart = () => {
     };
 
     createOrder()
-      .then(
-        (result) =>
-          alert(
-            `Tu orden ha sido tomada...
-    Con el valor de $${Cartctx.priceTotalAll()}.
-    Con el ID "${result.id}".`
-          ),
+      .then((result) =>
         Cartctx.cartList.forEach(async (item) => {
           const itemRef = doc(db, "productos", item.id);
           await updateDoc(itemRef, {
             stock: increment(-item.qty),
           });
+          Cartctx.getCheckoutId(result.id);
           Cartctx.clear();
         })
       )
       .catch((err) =>
-        alert(` 
-  No se pudo realizar tu compra... 
-  Error: ${err}`)
+        console.log(err)
       );
   };
 
@@ -92,9 +84,11 @@ const Cart = () => {
           <div className="list__buttons">
             <div className="list__pucharse">
               <p className="list__total">Total: ${Cartctx.priceTotalAll()}</p>
-              <button className="list__buy" onClick={buy}>
-                Realizar compra
-              </button>
+              <Link to="/ReactJS-Coderhouse/checkout">
+                <button className="list__buy" onClick={buy}>
+                  Realizar compra
+                </button>
+              </Link>
             </div>
             <button className="list__clear" onClick={Cartctx.clear}>
               Eliminar todo
@@ -112,6 +106,17 @@ const Cart = () => {
             </Link>
           </div>
         )}
+        <ToastContainer
+          position="bottom-right"
+          autoClose={8000}
+          hideProgressBar={true}
+          newestOnTop={false}
+          closeOnClick
+          rtl={false}
+          pauseOnFocusLoss
+          pauseOnHover
+          theme="colored"
+        />
       </div>
     </>
   );

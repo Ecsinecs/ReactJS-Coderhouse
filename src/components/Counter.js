@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCartShopping } from "@fortawesome/free-solid-svg-icons";
-import "../css/counter.css"
+import "../css/counter.css";
 
 const Counter = ({ max = 0, initial = 0, whenAdd }) => {
   const [counter, setCounter] = useState(0);
@@ -42,7 +42,11 @@ const Counter = ({ max = 0, initial = 0, whenAdd }) => {
           ></FontAwesomeIcon>
         </button>
       ) : (
-        <button disabled className="counter__buybutton" onClick={() => whenAdd(counter)}>
+        <button
+          disabled
+          className="counter__buybutton"
+          onClick={() => whenAdd(counter)}
+        >
           ¡Añadir!
           <FontAwesomeIcon
             icon={faCartShopping}

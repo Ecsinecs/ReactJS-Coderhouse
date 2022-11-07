@@ -2,6 +2,9 @@ import React, { useContext, useState } from "react";
 import { CartContext } from "./CartContext";
 import CheckoutBtn from "./CheckoutBtn";
 import Counter from "./Counter";
+import { toast } from "react-toastify";
+import { ToastContainer } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
 
 const ItemDetail = ({ item }) => {
   const [bought, setBought] = useState(false);
@@ -11,11 +14,29 @@ const ItemDetail = ({ item }) => {
   const whenAdd = (qty) => {
     if (!Cartctx.isInCart(item.name)) {
       setBought(true);
-      alert(`¡Has comprado ${qty} ${item.name}(s)!`);
       Cartctx.addItem(item, qty);
+      toast.success(`Se añadieron ${qty} ${item.name}(s) al carrito.`, {
+        position: "bottom-right",
+        autoClose: 3000,
+        hideProgressBar: true,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: false,
+        progress: undefined,
+        theme: "colored",
+      });
     } else {
       Cartctx.sumQty(item.id, qty);
-      alert(`¡Has añadido ${qty} unidades a ${item.name}!`);
+      toast.success(`Se añadió ${qty} unidad(es) más de ${item.name}(s) al carrito.`, {
+        position: "bottom-right",
+        autoClose: 3000,
+        hideProgressBar: true,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: false,
+        progress: undefined,
+        theme: "colored",
+      });
       setBought(true);
     }
   };
@@ -44,6 +65,17 @@ const ItemDetail = ({ item }) => {
         ) : (
           <h1 className="loading">Cargando...</h1>
         )}
+        <ToastContainer
+          position="bottom-right"
+          autoClose={3000}
+          hideProgressBar={true}
+          newestOnTop={false}
+          closeOnClick
+          rtl={false}
+          pauseOnFocusLoss
+          pauseOnHover
+          theme="colored"
+        />
       </div>
     </>
   );

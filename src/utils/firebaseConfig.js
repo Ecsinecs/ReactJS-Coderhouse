@@ -55,3 +55,17 @@ export const singleFetch = async (id) => {
     console.log("No such document!");
   }
 };
+
+export const getCheckout = async (id) => {
+  const docRef = doc(db, "orders", id);
+  const docSnap = await getDoc(docRef);
+
+  if (docSnap.exists()) {
+    let singleData = docSnap.data()
+    singleData.id = docSnap.id
+    return singleData
+  } else {
+    // doc.data() will be undefined in this case
+    console.log("No such document!");
+  }
+};

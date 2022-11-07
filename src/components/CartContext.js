@@ -1,10 +1,12 @@
 import React, { useState } from "react";
 import { createContext } from "react";
+import { toast } from "react-toastify";
 
 export const CartContext = createContext();
 
 const CartContextProvider = ({ children }) => {
   const [cartList, setCartList] = useState([]);
+  const [checkoutId, setCheckoutId] = useState("");
 
   const addItem = (item, qty) => {
     let itemQty = {
@@ -18,10 +20,30 @@ const CartContextProvider = ({ children }) => {
   const removeItem = (name) => {
     let newArray = cartList.filter((item) => item.name !== name);
     setCartList(newArray);
-  };
+    toast.success(`Se eliminó ${name} del carrito.`, {
+        position: "bottom-right",
+        autoClose: 3000,
+        hideProgressBar: true,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: false,
+        progress: undefined,
+        theme: "colored"
+  })
+};
 
   const clear = () => {
     setCartList([]);
+    toast.success(`Se eliminaron todos los productos del carrito.`, {
+      position: "bottom-right",
+      autoClose: 3000,
+      hideProgressBar: true,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: false,
+      progress: undefined,
+      theme: "colored"
+})
   };
 
   const isInCart = (name) => {
@@ -61,6 +83,10 @@ const CartContextProvider = ({ children }) => {
     return total;
   };
 
+  const getCheckoutId = (id) => {
+    setCheckoutId(id)
+  }
+
   return (
     // Entre llaves porque value solo puede tener una cosa, con la llave se convierte en objeto y es una sola cosa con varias dentro.
     <CartContext.Provider
@@ -74,6 +100,8 @@ const CartContextProvider = ({ children }) => {
         calcTotalItems,
         priceTotalAll,
         singleTotal,
+        getCheckoutId,
+        checkoutId,
       }}
     >
       {children}

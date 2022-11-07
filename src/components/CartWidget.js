@@ -8,7 +8,7 @@ const CartWidget = () => {
   const Cartctx = useContext(CartContext);
 
   return (
-    <Link to="/cart">
+    <Link to="/ReactJS-Coderhouse/cart">
       <div className="NavbarW__div">
         <FontAwesomeIcon
           icon={faCartShopping}

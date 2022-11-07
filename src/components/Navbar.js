@@ -17,9 +17,9 @@ const Navbar = () => {
              <Link to="/ReactJS-Coderhouse"><h1 className="navbar__title">Natura Shop</h1></Link>
           </div>
           <ul className="navbar__ul">
-            <Link to="/category/Verdura"><li>Verduras</li></Link>
-            <Link to="/category/Fruta"><li>Frutas</li></Link>
-            <Link to="/category/Pack"><li>Packs</li></Link>
+            <Link to="/ReactJS-Coderhouse/category/Verdura"><li>Verduras</li></Link>
+            <Link to="/ReactJS-Coderhouse/category/Fruta"><li>Frutas</li></Link>
+            <Link to="/ReactJS-Coderhouse/category/Pack"><li>Packs</li></Link>
           </ul>
           <CartWidget/>
         </nav>
